@@ -48,7 +48,7 @@ gem "image_processing", "~> 1.2"
 
 group :production do
 
-  gem "pg", "~> 0.18.4"
+  gem "pg", "~> 1.1"
 
   # Use Redis adapter to run Action Cable in production
   gem "redis", "~> 4.0"
