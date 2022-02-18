@@ -6,7 +6,7 @@
     <% @posts.each do |post| %>
       <%= render post %>
       <div>
-        <%= link_to "Show this post", post_path(post.id), data: { turbo: false } %>
+        <%= link_to "Show this post", post, data: { turbo: false } %>
       </div>
     <% end %>
   </div>
