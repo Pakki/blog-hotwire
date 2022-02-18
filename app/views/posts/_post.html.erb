@@ -1,12 +1,12 @@
-<div id="<%= dom_id post %>">
+<div id="post_<%= post.id %>">
   <p>
     <strong>Title:</strong>
     <%= post.title %>
   </p>
-
+  <p>Posted <%= time_tag post.created_at, "data-local": "time-ago" %></p>
+  <%= render partial: 'posts/comments_count', locals: { post: post } %>
   <p>
     <strong>Content:</strong>
     <%= post.content %>
   </p>
-
 </div>
