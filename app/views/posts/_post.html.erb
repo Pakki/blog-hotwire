@@ -4,7 +4,7 @@
     <%= post.title %>
   </p>
   <p>Posted <%= time_tag post.created_at, "data-local": "time-ago" %></p>
-  <%= render partial: 'posts/comments_count', locals: { post: post } %>
+  <%= render partial: 'posts/comments_count', locals: { post_id: post.id, comments_count: post.comments.count } %>
   <p>
     <strong>Content:</strong>
     <%= post.content %>

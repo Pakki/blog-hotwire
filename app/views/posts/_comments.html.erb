@@ -1,9 +1,7 @@
 <h2>Comments</h2>
 <%= turbo_stream_from :comments %>
-<div id="comments">
-  <%# Expands to render partial: "comments/coment", collection: post.comments %>
-  <%= turbo_frame_tag :comments do %>
-    <%= render post.comments %>
-  <% end %>
-</div>
+<%# Expands to render partial: "comments/coment", collection: post.comments %>
+<%= turbo_frame_tag :comments do %>
+  <%= render post.comments %>
+<% end %>
 <%= render "comments/new", post: post %>

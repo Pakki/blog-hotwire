@@ -10,13 +10,13 @@ class CommentsController < ApplicationController
     @post.broadcast_replace_to(
       :posts,
       target: "post_#{@post.id}_comments_count",
-      locals: { comments_count: },
+      locals: { comments_count:, post_id: @post.id },
       partial: 'posts/comments_count'
     )
     @post.broadcast_replace_to(
       :post,
       target: "post_#{@post.id}_comments_count",
-      locals: { comments_count: },
+      locals: { comments_count:, post_id: @post.id },
       partial: 'posts/comments_count'
     )
   end

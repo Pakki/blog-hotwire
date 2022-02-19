@@ -1,14 +1,13 @@
 <p style="color: green"><%= notice %></p>
 <h1>Posts</h1>
+<%= link_to "New post", new_post_path %>
+<br>
 <%= turbo_stream_from :posts %>
 <%= turbo_frame_tag :posts do %>
-  <div id="posts">
-    <% @posts.each do |post| %>
-      <%= render post %>
-      <div>
-        <%= link_to "Show this post", post, data: { turbo: false } %>
-      </div>
-    <% end %>
-  </div>
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <div>
+      <%= link_to "Show this post", post, data: { turbo: false } %>
+    </div>
+  <% end %>
 <% end %>
-<%= link_to "New post", new_post_path %>
