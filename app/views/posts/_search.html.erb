@@ -1,0 +1,8 @@
+<div>Results: <%= posts.count %></div>
+<%= turbo_stream_from :posts %>
+<%= turbo_frame_tag :posts do %>
+  <% posts.each do |post| %>
+    <br>
+    <%=  link_to highlight(post.title, params[:search_phrase]), post, data: { turbo: false } %>
+  <% end %>
+<% end %>

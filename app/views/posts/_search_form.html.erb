@@ -1,0 +1,9 @@
+<%#= form_with url: search_posts_path, method: :post, data: { controller: "search", search_target: "form" } do |form| %>
+  <%#= form.label :search_phrase, "Search for:" %>
+  <%#= form.text_field :search_phrase, data: { action: "input -> search#search" } %>
+  <%# end %>
+  <%= form_with url: search_posts_path, method: :post do |form| %>
+    <%= form.label :search_phrase, "Search for:" %>
+    <%= form.text_field :search_phrase, oninput: "this.form.requestSubmit()" %>
+  <% end %>
+  <div id="search_results"></div>

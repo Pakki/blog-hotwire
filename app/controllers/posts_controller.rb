@@ -14,6 +14,22 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def search
+    @posts = if params[:search_phrase].present?
+               Post.search_by_title(params[:search_phrase])
+             else
+               []
+             end
+
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.update('search_results',
+                                                 partial: 'posts/search',
+                                                 locals: { posts: @posts })
+      end
+    end
+  end
+
   # GET /posts/1/edit
   def edit; end
 
