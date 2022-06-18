@@ -7,9 +7,6 @@
 <%= turbo_frame_tag :posts do %>
   <% @posts.each do |post| %>
     <%= render post %>
-    <div>
-      <%= link_to "Show this post", post, data: { turbo: false } %>
-    </div>
   <% end %>
 <% end %>
 <div>

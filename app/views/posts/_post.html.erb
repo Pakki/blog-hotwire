@@ -9,4 +9,9 @@
     <strong>Content:</strong>
     <%= post.content %>
   </p>
+  <p>
+    <% if params[:action].nil? || params[:action] == 'index' %>
+      <%= link_to "Show this post", post, data: { turbo: false } %>
+    <% end %>
+  </p>
 </div>
